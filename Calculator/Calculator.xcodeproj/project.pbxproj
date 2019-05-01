@@ -15,6 +15,7 @@
 		377873D82279E8C600D5ECDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377873D62279E8C600D5ECDE /* LaunchScreen.storyboard */; };
 		377873E32279E8C700D5ECDE /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377873E22279E8C700D5ECDE /* CalculatorTests.swift */; };
 		377873EE2279E8C700D5ECDE /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377873ED2279E8C700D5ECDE /* CalculatorUITests.swift */; };
+		37787401227A01BE00D5ECDE /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		377873E92279E8C700D5ECDE /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		377873ED2279E8C700D5ECDE /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		377873EF2279E8C700D5ECDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				377873CA2279E8C500D5ECDE /* AppDelegate.swift */,
 				377873CC2279E8C500D5ECDE /* ViewController.swift */,
+				37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */,
 				377873CE2279E8C500D5ECDE /* Main.storyboard */,
 				377873D42279E8C600D5ECDE /* Assets.xcassets */,
 				377873D62279E8C600D5ECDE /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				377873CD2279E8C500D5ECDE /* ViewController.swift in Sources */,
 				377873CB2279E8C500D5ECDE /* AppDelegate.swift in Sources */,
+				37787401227A01BE00D5ECDE /* CalculatorViewModel.swift in Sources */,
 				377873D32279E8C500D5ECDE /* Calculator.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
