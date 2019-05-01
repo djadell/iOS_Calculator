@@ -16,6 +16,7 @@
 		377873E32279E8C700D5ECDE /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377873E22279E8C700D5ECDE /* CalculatorTests.swift */; };
 		377873EE2279E8C700D5ECDE /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377873ED2279E8C700D5ECDE /* CalculatorUITests.swift */; };
 		37787401227A01BE00D5ECDE /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */; };
+		37787405227A2A0000D5ECDE /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37787404227A2A0000D5ECDE /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		377873ED2279E8C700D5ECDE /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		377873EF2279E8C700D5ECDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		37787404227A2A0000D5ECDE /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		377873C92279E8C500D5ECDE /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				37787403227A29D100D5ECDE /* Model */,
 				377873CA2279E8C500D5ECDE /* AppDelegate.swift */,
 				377873CC2279E8C500D5ECDE /* ViewController.swift */,
 				37787400227A01BE00D5ECDE /* CalculatorViewModel.swift */,
@@ -129,6 +132,14 @@
 				377873EF2279E8C700D5ECDE /* Info.plist */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		37787403227A29D100D5ECDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37787404227A2A0000D5ECDE /* Number.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37787405227A2A0000D5ECDE /* Number.swift in Sources */,
 				377873CD2279E8C500D5ECDE /* ViewController.swift in Sources */,
 				377873CB2279E8C500D5ECDE /* AppDelegate.swift in Sources */,
 				37787401227A01BE00D5ECDE /* CalculatorViewModel.swift in Sources */,

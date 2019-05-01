@@ -21,34 +21,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var iButtonAdd: UIButton!
     @IBOutlet weak var iButtonEquals: UIButton!
     @IBOutlet weak var iButtonDot: UIButton!
-    @IBOutlet weak var iButton0: UIButton!
-    @IBOutlet weak var iButton1: UIButton!
-    @IBOutlet weak var iButton2: UIButton!
-    @IBOutlet weak var iButton3: UIButton!
-    @IBOutlet weak var iButton4: UIButton!
-    @IBOutlet weak var iButton5: UIButton!
-    @IBOutlet weak var iButton6: UIButton!
-    @IBOutlet weak var iButton7: UIButton!
-    @IBOutlet weak var iButton8: UIButton!
-    @IBOutlet weak var iButton9: UIButton!
     
-    //MARK: Buttons Hexadecimal
+    //MARK: Hexadecimal
     @IBOutlet weak var iViewHexButtons: UIView!
-    @IBOutlet weak var iButtonA: UIButton!
-    @IBOutlet weak var iButtonB: UIButton!
-    @IBOutlet weak var iButtonC: UIButton!
-    @IBOutlet weak var iButtonD: UIButton!
-    @IBOutlet weak var iButtonE: UIButton!
-    @IBOutlet weak var iButtonF: UIButton!
     
-    //MARK: - LifeCycle
+    private var calculatorViewModel = CalculatorViewModel(number : Number())
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        printNumber()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    //MARK: - Dav pending to move ViewModel!
+    func printNumber() {
+        iLabelDisplay.text = calculatorViewModel.displayNumber
     }
     
     //MARK: - IBActions
@@ -67,127 +59,45 @@ class ViewController: UIViewController {
     }
     
     //MARK: IBActions Operations
-    @IBAction func onButtonEqualsPressed(_ sender: Any)
+    @IBAction func onOperandPressed(_ sender: UIButton)
     {
-        
+        let button: UIButton = sender 
+        calculatorViewModel.setOperand(sOperator: button.titleLabel!.text!)
+        printNumber()
     }
     
-    @IBAction func onButtonAddPressed(_ sender: Any)
+    @IBAction func onButtonAllClearPressed(_ sender: UIButton)
     {
-        
+        calculatorViewModel.setClearAll()
+        printNumber()
     }
     
-    @IBAction func onButtonSubPressed(_ sender: Any)
+    @IBAction func onButtonClearPressed(_ sender: UIButton)
     {
-        
-    }
-    
-    @IBAction func onButtonMulPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonDivPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonAllClearPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonClearPressed(_ sender: Any)
-    {
-        
+        calculatorViewModel.setClear()
+        printNumber()
     }
     
     //MARK: IBActions Values
-    @IBAction func onButtonDotPressed(_ sender: Any)
+    @IBAction func onButtonDotPressed(_ sender: UIButton)
     {
         
     }
     
-    @IBAction func onButton0Pressed(_ sender: Any)
+    @IBAction func onNumberPressed(_ sender: UIButton)
     {
-        
-    }
-    
-    @IBAction func onButton1Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton2Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton3Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton4Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton5Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton6Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton7Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton8Pressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButton9Pressed(_ sender: Any)
-    {
-        
+        if sender.tag >= 0 && sender.tag <= 9 {
+            calculatorViewModel.setNumber(sNumber: sender.tag)
+            printNumber()
+        }
     }
     
     //MARK: IBActions Hexadecimal
-    @IBAction func onButtonAPressed(_ sender: Any)
+    @IBAction func onHexNumberPressed(_ sender: UIButton)
     {
         
     }
     
-    @IBAction func onButtonBPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonCPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonDPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonEPressed(_ sender: Any)
-    {
-        
-    }
-    
-    @IBAction func onButtonFPressed(_ sender: Any)
-    {
-        
-    }
     
 }
 
