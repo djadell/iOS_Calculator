@@ -13,27 +13,39 @@ public final class CalculatorViewModel {
     //MARK: - Properties
     public var displayNumber : String
     private var number : Number
+    private var isDotSet : Bool = false
     
     //MARK: - Obj Lifecycle
     init (number : Number) {
         self.number = number;
-        self.displayNumber = String(self.number.num1)
+        self.displayNumber = "0"
     }
     
+    //MARK: - Functions
     public func setClearAll ()
     {
+        isDotSet = false
         self.number = Number ()
-        self.displayNumber = String(self.number.num1)
+        setDisplayNumber(dNumber: self.number.num1)
     }
     
     public func setClear ()
     {
-        self.displayNumber = "0"
+        isDotSet = false
+        setDisplayNumber(dNumber: 0)
+    }
+    
+    public func setDot()
+    {
+        if !isDotSet {
+            isDotSet = true
+            displayNumber += "."
+        }
     }
     
     public func setNumber(sNumber: Int)
     {
-        if Double(displayNumber) == 0 {
+        if displayNumber == "0" {
             displayNumber = ""
         }
         displayNumber += String(sNumber)
@@ -47,10 +59,11 @@ public final class CalculatorViewModel {
         } else if sOperator != "=" {
             number.operand = sOperator
             number.num1 = Double(displayNumber) ?? 0.0
-            displayNumber = "0"
+            setClear()
         }
     }
     
+    //MARK - Private functions
     func calculate (sInputOperator: String)
     {
         switch number.operand {
@@ -68,6 +81,14 @@ public final class CalculatorViewModel {
         displayNumber = String(self.number.result)
         if  sInputOperator == "="{
             number.operand = ""
+        }
+    }
+    
+    func setDisplayNumber(dNumber : Double ){
+        if dNumber.rounded(.up) == dNumber.rounded(.down) {
+            self.displayNumber = String(Int(dNumber))
+        } else {
+            self.displayNumber = String(dNumber)
         }
     }
 }

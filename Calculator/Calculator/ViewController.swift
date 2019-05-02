@@ -81,7 +81,8 @@ class ViewController: UIViewController {
     //MARK: IBActions Values
     @IBAction func onButtonDotPressed(_ sender: UIButton)
     {
-        
+        calculatorViewModel.setDot()
+        printNumber()
     }
     
     @IBAction func onNumberPressed(_ sender: UIButton)
